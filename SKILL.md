@@ -1,8 +1,8 @@
 ---
 name: map-projection-wizard
-display_name: 地图投影选择向导
+display_name: 地图投影向导
 display_name_en: Map Projection Wizard
-description: 地图投影选择向导。生成一个本地单文件网页，用户通过 2 步操作（① 框定范围：上传 GeoJSON/SHP 或在地图上拖拽矩形；② 选择变形性质：等积/等角/等距/折衷）获得推荐投影的名称与参数，并输出 PROJ 字符串、WKT1（Esri）、WKT2（ISO 19162），两个 WKT 均可一键导出 ArcGIS 可用的 .prj。内置国标投影条款卡片与经纬网离线底图。触发词：选投影、投影选择、投影推荐、projection wizard、确定投影参数、投影 PROJ、投影 WKT、WKT2、.prj、EPSG 坐标系设计。
+description: 地图投影向导。生成一个本地单文件网页，用户通过 2 步操作（① 框定范围：上传 GeoJSON/SHP 或在地图上拖拽矩形；② 选择变形性质：等积/等角/等距/折衷）获得推荐投影的名称与参数，并输出 PROJ 字符串、WKT1（Esri）、WKT2（ISO 19162），两个 WKT 均可一键导出 ArcGIS 可用的 .prj。内置国标投影条款卡片与经纬网离线底图。触发词：选投影、投影选择、投影推荐、projection wizard、确定投影参数、投影 PROJ、投影 WKT、WKT2、.prj、EPSG 坐标系设计。
 description_zh: 两步选对地图投影：拖框定范围、选变形性质，直接给出推荐投影与参数，输出 PROJ / WKT1 / WKT2 并可一键下载 .prj；单文件纯离线，附国标投影条款卡片。
 description_en: Pick the right map projection in two steps. Delivers the projection name and parameters, PROJ / WKT1 (Esri) / WKT2 (ISO 19162) strings and one-click .prj export — fully offline, in a single HTML file.
 version: 1.0.0
