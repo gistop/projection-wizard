@@ -11,6 +11,10 @@
 
 - **两步出结果**：① 在地图上拖个矩形（或上传 GeoJSON/SHP）→ ② 选等积/等角/等距/折衷 → 得到推荐投影、参数与可复制的坐标串。
 - **三种输出格式**（标签页切换，默认 WKT2）
+
+![三种输出格式](docs/images/screenshot-formats.png)
+
+
   - `PROJ` —— 粘进 PROJ / GDAL / QGIS / pyproj 即用
   - `WKT1（Esri）` —— ArcMap、ArcGIS Pro 3.5 及更早、shapefile 的 .prj
   - `WKT2（ISO 19162）` —— ArcGIS Pro 3.6+ 默认格式，GDAL 3+ / QGIS 3.x / PostGIS 通用
