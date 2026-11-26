@@ -10,19 +10,18 @@
 ## 它能做什么
 
 - **两步出结果**：① 在地图上拖个矩形（或上传 GeoJSON/SHP）→ ② 选等积/等角/等距/折衷 → 得到推荐投影、参数与可复制的坐标串。
-- **三种输出格式**（标签页切换，默认 WKT2）
-
-![三种输出格式](docs/images/screenshot-formats.png)
-
-
+- **三种输出格式**（标签页切换，默认 WKT2，也可一键导出 .prj）
   - `PROJ` —— 粘进 PROJ / GDAL / QGIS / pyproj 即用
   - `WKT1（Esri）` —— ArcMap、ArcGIS Pro 3.5 及更早、shapefile 的 .prj
   - `WKT2（ISO 19162）` —— ArcGIS Pro 3.6+ 默认格式，GDAL 3+ / QGIS 3.x / PostGIS 通用
-  - 两个 WKT 都支持 **下载 .prj**，直接拖进 ArcGIS/QGIS 即可定义坐标系
 - **参数表**：标准纬线、中央经线、原点纬度、比例因子逐项列出，不用自己去 PROJ 串里扒。
 - **投影预览**：按生成的 PROJ 串实时正算，画出经纬网、陆地轮廓与制图范围，一眼看出形变。
 - **合规底图**：内置经纬网参考模式（Natural Earth，完全离线）；可选接入高德矢量/卫星底图。
 - **国标知识库**：内置 GB 35650、GB/T 45792、GB/T 12343 等标准的投影条款卡片，选型时可直接对照。
+
+<p align="center">
+  <img src="docs/images/screenshot-formats.png" alt="三种输出格式（PROJ / WKT1 / WKT2）与 .prj 导出" width="380">
+</p>
 
 ## 快速开始
 
