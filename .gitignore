@@ -1,0 +1,20 @@
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 本地测试与临时产物
+_t*.js
+_dump*.js
+*.tmp
+*.log
+.chrome-tmp*/
