@@ -152,7 +152,7 @@ PROJCS["ProjWiz_Custom_<NAME>",
 
 ## 7. 合规底图（高德为主，天地图为备选）
 
-### 高德（当前实现，免 key）
+### 高德（当前实现，公开瓦片接口）
 
 ```
 矢量:  https://webrd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}
@@ -160,7 +160,7 @@ PROJCS["ProjWiz_Custom_<NAME>",
 路网注记（透明，叠卫星）: https://webst0{1-4}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}
 ```
 
-- 全部 **免 key**，EPSG:3857 XYZ，256px 瓦片，实测 `Access-Control-Allow-Origin: *`
+- 全部无需申请 key，EPSG:3857 XYZ，256px 瓦片，实测 `Access-Control-Allow-Origin: *`
 - 坐标系是 **GCJ-02**（不是 WGS84）：瓦片里的经纬度已被偏移，与真实 WGS84 差约 100–600m。本页所有数据与输出保持 WGS84，只在绘制/取点边界做转换（见 SKILL.md「GCJ-02 纠偏」）
 - 页面用 **Leaflet**：`L.tileLayer(url, { subdomains:["1","2","3","4"], maxZoom:18 })`，瓦片以 `<img>` 加载，天然走 `img-src`，不受宿主 `connect-src` 限制（详见下节）
 
@@ -179,7 +179,7 @@ https://t{s}.tianditu.gov.cn/DataServer?T={layer}&x={x}&y={y}&l={z}&tk={KEY}
 1. 只接白名单图源：高德 / 腾讯 / 百度 / 天地图（均有审图号或合规授权）
 2. 底图不可用时退化到"参考模式"：经纬网格 + 赤道/回归线/极圈 + Natural Earth land-110m 陆地轮廓（无国界、无注记）
 3. 天地图/高德中国范围内内容完整（含台湾地区、南海诸岛等），不得裁剪或替换为 OSM 等境外底图
-4. 高德免 key 瓦片适合内部与演示；对外正式交付建议走 JS API 授权或天地图正式 key
+4. 高德公开接口瓦片适合内部与演示；对外正式交付建议走 JS API 授权或天地图正式 key
 
 ## 附：proj4js 调用注意事项
 
