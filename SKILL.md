@@ -1,6 +1,20 @@
 ---
 name: map-projection-wizard
-description: 地图投影选择向导。生成一个本地单文件网页，用户通过 2 步操作（① 框定制图范围：上传 GeoJSON/SHP 或在地图上拖拽矩形或手动输入经纬度；② 选择变形性质：等积/等角/等距/折衷）获得推荐投影的名称、参数、PROJ 字符串与 WKT。适用于制图/GIS 场景中的投影选型、投影参数确定、坐标系统设计等需求。网页内置高德矢量/卫星合规底图（免 key，含 GCJ-02 纠偏），底图不可用时可退化为经纬网参考模式。触发词：选投影、投影选择、投影推荐、projection wizard、确定投影参数、投影 PROJ、投影 WKT。
+display_name: 地图投影选择向导
+display_name_en: Map Projection Wizard
+description: 地图投影选择向导。生成一个本地单文件网页，用户通过 2 步操作（① 框定范围：上传 GeoJSON/SHP 或在地图上拖拽矩形；② 选择变形性质：等积/等角/等距/折衷）获得推荐投影的名称与参数，并输出 PROJ 字符串、WKT1（Esri）、WKT2（ISO 19162），两个 WKT 均可一键导出 ArcGIS 可用的 .prj。内置国标投影条款卡片与经纬网离线底图。触发词：选投影、投影选择、投影推荐、projection wizard、确定投影参数、投影 PROJ、投影 WKT、WKT2、.prj、EPSG 坐标系设计。
+description_zh: 两步选对地图投影：拖框定范围、选变形性质，直接给出推荐投影与参数，输出 PROJ / WKT1 / WKT2 并可一键下载 .prj；单文件纯离线，附国标投影条款卡片。
+description_en: Pick the right map projection in two steps. Delivers the projection name and parameters, PROJ / WKT1 (Esri) / WKT2 (ISO 19162) strings and one-click .prj export — fully offline, in a single HTML file.
+version: 1.0.0
+author: gistop
+examples_zh:
+  - 我要画一张全国人口密度图，帮我选个投影，给出 PROJ 和 WKT2
+  - 东经 73–135、北纬 18–54 的范围用哪个投影？要能直接导入 ArcGIS Pro
+  - 按 GB/T 45792-2025，1:5 万专题图的底图该用什么投影和参数？
+examples_en:
+  - Choose a projection for a China-wide population density map and give me the PROJ and WKT2 strings
+  - Which projection fits extent 73E-135E, 18N-54N, ready to import into ArcGIS Pro?
+  - Per GB/T 45792-2025, what projection and parameters should a 1:50,000 thematic map basemap use?
 agent_created: true
 ---
 
