@@ -5,10 +5,11 @@
 ## 目录与命名
 
 ```
-references/standards/
-  index.md                  # 总表，一行一个标准（唯一必须维护的索引）
-  schema.md                 # 本文件
-  _template.md              # 空白卡模板，复制后改名
+references/
+  standards-index.md        # 总表，一行一个标准（唯一必须维护的索引）
+  standards-schema.md       # 本文件
+  standards-_template.md    # 空白卡模板，复制后改名
+  cn-*.md                   # 已收录的标准卡片
   cn-GBT45792-2025.md       # 中国国标
   us-xxx.md / jp-xxx.md     # 其他国家
   iso-xxx.md / ogc-xxx.md   # 国际组织

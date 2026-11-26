@@ -33,7 +33,7 @@ agent_created: true
 
 ## 使用流程
 
-1. 将 `assets/template/index.html` 复制到用户指定位置（未指定时复制到当前工作目录，命名为 `projection-wizard.html`）
+1. 将 `assets/index.html` 复制到用户指定位置（未指定时复制到当前工作目录，命名为 `projection-wizard.html`）
 2. 调用 `present_files` 打开该文件（本地 HTML 直接在预览面板中打开即可运行，全部计算在浏览器本地完成，无需服务器）
 3. 告知用户使用方式：
    - **步骤 1（确定范围）**：上传 GeoJSON（.geojson/.json）、SHP（.zip 打包或 .shp+.prj+.dbf 松散文件）自动取包围框；或在地图上点击"⬚ 地图框选"后拖拽矩形
@@ -48,7 +48,7 @@ agent_created: true
    - 底图瓦片全部加载失败时（例如本机完全离线）自动回退到经纬网参考模式并 toast 提示，不会留一张空白地图
    - 若用户点名要天地图：需要用户自备 key（tianditu.gov.cn 免费申请，浏览器端应用，测试 key 约 7 天有效），但天地图瓦片需要 key 且配额有限，一般没有必要
 5. 页面**没有页脚**：GCJ-02 纠偏说明在地图问号 tip（`EXTENT_TIP`）里，Projection Wizard 署名在「③ 推荐投影」的 tip 里。交付时口头提醒一句即可：底图坐标系是 GCJ-02，页面已自动纠偏，输入框与输出参数始终是 WGS84 真值
-6. 用户提到某国/某行业标准（如 GB/T 45792-2025）时：先查 `references/standards/index.md` 有没有卡片；有则按其规则复核页面给出的投影与参数并在回复中说明差异，无则该标准尚未收录，可请用户提供条款或链接后按 `schema.md` 建卡
+6. 用户提到某国/某行业标准（如 GB/T 45792-2025）时：先查 `references/standards-index.md` 有没有卡片；有则按其规则复核页面给出的投影与参数并在回复中说明差异，无则该标准尚未收录，可请用户提供条款或链接后按 `references/standards-schema.md` 建卡
 
 ## 底图合规要求（重要）
 
@@ -86,12 +86,16 @@ agent_created: true
 
 ## Resources
 
-### assets/template/index.html
-单文件投影选择器网页模板。使用时整体复制到交付位置，不要拆分；如需定制（增删投影、改默认范围、换语言），直接编辑副本。
+### assets/index.html
+单文件投影选择器网页模板（平铺在 `assets/` 下，不再有 `assets/template/` 子目录——技能包只允许两级）。使用时整体复制到交付位置，不要拆分；如需定制（增删投影、改默认范围、换语言），直接编辑副本。
 
-### references/standards/
-投影相关标准的知识库：`index.md`（总表 + 待收录清单 + 冲突裁决顺序）、`schema.md`（卡片字段与填写规范）、`_template.md`（空白卡）、已收录标准的规则卡（如 `cn-GBT45792-2025.md`）。
-**这里放"规则"，不放原文 PDF**：一张卡只摘投影相关条款 + 出处指针（标准号/条款/URL/检索日期）。用户提供标准资料时，按 `schema.md` 建卡并更新 `index.md`。
+### references/ 下的标准卡片（扁平结构，重要）
+投影相关标准的知识库，**全部平铺在 `references/` 一级**（WorkBuddy 技能包只允许「根目录/二级目录/文件」两级，不能再有 `references/standards/` 这种三级嵌套）：
+- `standards-index.md` —— 总表 + 待收录清单 + 冲突裁决顺序
+- `standards-schema.md` —— 卡片字段与填写规范
+- `standards-_template.md` —— 空白卡模板
+- `cn-*.md` —— 已收录标准的规则卡（如 `cn-GBT45792-2025.md`）
+**这里放"规则"，不放原文 PDF**：一张卡只摘投影相关条款 + 出处指针（标准号/条款/URL/检索日期）。用户提供标准资料时，按 `standards-schema.md` 建卡并更新 `standards-index.md`。
 注意：页面本身只实现几何启发式（Projection Wizard 逻辑）；标准优先级高于它，命中标准时以卡片规则为准，参数（带号、x_0、k、双标准纬线）常需人工改。
 
 ### references/projection-rules.md

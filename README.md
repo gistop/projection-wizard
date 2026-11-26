@@ -5,7 +5,7 @@
 
 一个面向 GIS 初学者与制图从业者的投影选型工具。推荐逻辑忠实复刻 [Projection Wizard](https://projectionwizard.org) v2.1（CC BY）的选择规则，并补齐了中文界面、国标知识与 WKT2 输出。
 
-![界面截图](docs/images/screenshot-main.png)
+![界面截图](docs/screenshot-main.png)
 
 ## 它能做什么
 
@@ -20,7 +20,7 @@
 - **国标知识库**：内置 GB 35650、GB/T 45792、GB/T 12343 等标准的投影条款卡片，选型时可直接对照。
 
 <p align="center">
-  <img src="docs/images/screenshot-formats.png" alt="三种输出格式（PROJ / WKT1 / WKT2）与 .prj 导出" width="380">
+  <img src="docs/screenshot-formats.png" alt="三种输出格式（PROJ / WKT1 / WKT2）与 .prj 导出" width="380">
 </p>
 
 ## 快速开始
@@ -31,7 +31,7 @@
 
 # 方式二：从源码构建（把内联数据重新生成一遍）
 python scripts/build_land_data.py     # 重新生成陆地轮廓内联数据
-# 页面源码就在 assets/template/index.html，改完直接另存为 dist/projection-wizard.html
+# 页面源码就在 assets/index.html，改完直接另存为 dist/projection-wizard.html
 ```
 
 页面完全离线运行：Leaflet、proj4js、shpjs 与陆地轮廓数据全部内联在单个 HTML 里，断网也能选投影、出参数、导出 .prj（只有切到高德底图时才需要联网）。
@@ -62,13 +62,19 @@ WKT 输出做过逐字段校验：31 个推荐组合与 PROJ 9（pyproj）的权
 
 ```
 ├─ dist/projection-wizard.html   # 单文件成品（下载即用）
-├─ assets/template/index.html    # 页面源码
+├─ assets/index.html             # 页面源码
 ├─ references/
 │  ├─ projection-rules.md        # 推荐规则完整说明（改逻辑必读）
-│  └─ standards/                 # 国标投影条款卡片
+│  ├─ standards-index.md         # 国标卡片总表
+│  ├─ standards-schema.md        # 卡片字段规范
+│  ├─ standards-_template.md     # 空白卡模板
+│  └─ cn-*.md                    # 各标准的投影条款卡片（平铺）
 ├─ scripts/build_land_data.py    # 陆地轮廓内联数据生成脚本
+├─ docs/                         # README 截图
 └─ SKILL.md                      # WorkBuddy 技能入口
 ```
+
+> 目录刻意保持「根目录 / 二级目录 / 文件」两层：WorkBuddy 技能市场要求 zip 内不能有三级嵌套，`assets/` 与 `references/` 下都直接放文件。
 
 ## 已知边界
 
