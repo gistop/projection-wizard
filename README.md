@@ -41,7 +41,7 @@ python scripts/build_land_data.py     # 重新生成陆地轮廓内联数据
 本仓库同时是一个 [WorkBuddy](https://www.workbuddy.cn) 技能包，`SKILL.md` 是技能入口。
 
 ```bash
-git clone https://github.com/<your-name>/projection-wizard.git \
+git clone https://github.com/gistop/projection-wizard.git \
   ~/.workbuddy/skills/map-projection-wizard
 ```
 
